@@ -106,7 +106,7 @@ void display(void)
     gluDisk(p, 0, 60, 360, 1);
     glEnd();
 
-
+    //contoh aja
 
     glPopMatrix();
 
