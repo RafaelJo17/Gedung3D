@@ -13,6 +13,7 @@ using namespace std;
 GLuint _textureID;
 GLuint _textureID1;
 GLuint _textureID2;
+GLuint _textureID3;
 
 GLUquadricObj* p = gluNewQuadric();
 float xrot = 0;
@@ -67,6 +68,7 @@ void init(void)
     _textureID = loadBMP_custom("robinson.bmp");
     _textureID1 = loadBMP_custom("robinson.bmp");
     _textureID2 = loadBMP_custom("tembok.bmp");
+    _textureID3 = loadBMP_custom("apartment.bmp");
 
 
 }
@@ -600,6 +602,64 @@ void display(void)
     glTexCoord2f(0.0, 5.0);
     glVertex3f(-167.4, 100, 225);
     glEnd();
+
+
+    glBindTexture(GL_TEXTURE_2D, _textureID3);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+    //apartment depan
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0);
+    glVertex3f(-293.1, 100, 178.1);
+    glTexCoord2f(2.0, 0.0);
+    glVertex3f(-167.5, 100, 178.1);
+    glTexCoord2f(2.0, 2.0);
+    glVertex3f(-167.5, 340, 178.1);
+    glTexCoord2f(0.0, 2.0);
+    glVertex3f(-293.0, 340, 178.1);
+    glEnd();
+
+    //apartment kanan
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0);
+    glVertex3f(-167.2, 100, 178);
+    glTexCoord2f(2.0, 0.0);
+    glVertex3f(-167.2, 100, -118);
+    glTexCoord2f(2.0, 2.0);
+    glVertex3f(-167.2, 340, -118);
+    glTexCoord2f(0.0, 2.0);
+    glVertex3f(-167.2, 340, 178);
+    glEnd();
+
+    //apartment kiri
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0);
+    glVertex3f(-293.1, 100, 178);
+    glTexCoord2f(2.0, 0.0);
+    glVertex3f(-293.1, 100, -118);
+    glTexCoord2f(2.0, 2.0);
+    glVertex3f(-293.1, 340, -118);
+    glTexCoord2f(0.0, 2.0);
+    glVertex3f(-293.1, 340, 178);
+    glEnd();
+
+    //apartment depan
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0);
+    glVertex3f(-293.1, 100, -117.9);
+    glTexCoord2f(2.0, 0.0);
+    glVertex3f(-167.5, 100, -117.9);
+    glTexCoord2f(2.0, 2.0);
+    glVertex3f(-167.5, 340, -117.9);
+    glTexCoord2f(0.0, 2.0);
+    glVertex3f(-293.0, 340, -117.9);
+    glEnd();
+
 
 
     glBindTexture(GL_TEXTURE_2D, _textureID);
