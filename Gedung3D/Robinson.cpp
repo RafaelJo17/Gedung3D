@@ -647,7 +647,7 @@ void display(void)
     glVertex3f(-293.1, 340, 178);
     glEnd();
 
-    //apartment depan
+    //apartment belakang
     glColor3f(1.0, 1.0, 1.0);
     glBegin(GL_QUADS);
     glTexCoord2f(0.0, 0.0);
@@ -713,14 +713,12 @@ void display(void)
     glVertex3f(40.0, 130, 45);
     glVertex3f(40.0, 130, 50);
     glEnd();
-
-    //apartment
     
     
-
     glBindTexture(GL_TEXTURE_2D, _textureID1);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
     //papan nama kanan
     glColor3f(1.0, 1.0, 1.0);
     glBegin(GL_QUADS);
@@ -733,9 +731,6 @@ void display(void)
     glTexCoord2f(0.0f, 1.0f);
     glVertex3f(75.0, 130, 78.1);
     glEnd();
-
-
-
 
 
     glPopMatrix();
