@@ -86,12 +86,17 @@ void kubus(float red, float green, float blue, float x, float y, float z, float 
     glPushMatrix();
     glColor3f(red, green, blue);
     glTranslatef(x, y + tinggi / 2, z);
-    glRotatef(rotation_z,0.0, 1.0, 0.0f);
+    glRotatef(rotation_z, 0.0, 1.0, 0.0f);
     glScalef(panjang, tinggi, lebar);
     glutSolidCube(1);
     glPopMatrix();
 }
 
+void meja_kotak(float x, float y, float z) {
+    kubus(0.396f, 0.337f, 0.243f, x, y+4, z, 10,10,1, 0);
+    kubus(0.813f, 0.694f, 0.494f, x, y, z, 1, 1, 4, 0);
+    silinder(0.813f, 0.694f, 0.494f, x, -z, y, 3, 0.2);
+}
 
 
 void display(void)
@@ -105,7 +110,7 @@ void display(void)
     glRotatef(xrot, 1, 0, 0);
     glRotatef(yrot, 0, 1, 0);
 
-    glBegin(GL_QUADS);//Jalan halaman Rumah
+    glBegin(GL_QUADS);//Luas Mall
     glColor3f(0.0f, 0.0f, 0.0f);
     glVertex3f(-500.0, -3.0, -500.0);
     glColor3f(0.4f, 0.4f, 0.4f);
@@ -115,7 +120,7 @@ void display(void)
     glColor3f(0.8f, 0.8f, 0.8f);
     glVertex3f(500.0, -3.0, -500.0);
     glEnd();
-    glBegin(GL_LINE_LOOP);//Garis Halaman rumah
+    glBegin(GL_LINE_LOOP);//Garis Halaman Mall
     glColor3f(0.0f, 0.0f, 0.0f);
     glVertex3f(-500.0, -3.0, -500.0);
     glVertex3f(-500.0, -3.0, 500.0);
@@ -124,24 +129,135 @@ void display(void)
     glEnd();
 
     //lantai 1 - 4
-    silinder(0.1, 0.5, 0.8, 0, 0, 0, 50, 100);
-    silinder(0.3, 0.4, 0.7, 0, 0, 50, 70, 5);
-    silinder(0.3, 0.4, 0.7, 0, 0, 100, 70, 5);
-    silinder(0.3, 0.4, 0.7, 0, 0, 150, 70, 5);
-    silinder(0.3, 0.4, 0.7, 0, 0, 200, 70, 5);
+    silinder(0.3, 0.3, 0.3, 0, 0, 0, 50, 100);
+    silinder(0.741f, 0.741f, 0.713f, 0, 0, 50, 70, 5);
+    silinder(0.741f, 0.741f, 0.713f, 0, 0, 100, 70, 5);
+    silinder(0.741f, 0.741f, 0.713f, 0, 0, 150, 70, 5);
+    silinder(0.741f, 0.741f, 0.713f, 0, 0, 200, 70, 5);
 
     //lantai 1 - 4
-    kubus(0.1, 0.3, 0.5, -90, 25, 20, 100, 50, 5, -10);
-    kubus(0.4, 0.2, 0.5, -90, 50, 20, 100, 50, 5, -10);
-    kubus(0.6, 0.1, 0.5, -90, 75, 20, 100, 50, 5, -10);
-    kubus(0.2, 0.7, 0.5, -80, 100, 10, 100, 50, 5, -20);
+    kubus(0.1, 0.3, 0.5, -90, 24.8, 20, 100, 50, 4.90, -10);
+    kubus(0.4, 0.2, 0.5, -90, 49.8, 20, 100, 50, 4.90, -10);
+    kubus(0.6, 0.1, 0.5, -90, 74.8, 20, 100, 50, 4.90, -10);
+    kubus(0.2, 0.7, 0.5, -80, 99.8, 10, 100, 50, 4.90, -20);
 
-    //blakang mall
-    kubus(0.2, 0.4, 0.3, -80, 0, -80, 100, 160, 105, 0);
+    //belakang mall
+    kubus(0.2, 0.4, 0.3, -80, 0, -80, 100, 160, 99.9, 0);
 
     //pilar-pilar
-    silinder(0.3, 0.4, 0.7, 0, -60, 0, 5, 100);
-    silinder(0.3, 0.4, 0.7, -50, -35, 0, 5, 100);
+    silinder(0.413f, 0.413f, 0.4f, -20, -60, 0, 5, 100);
+    silinder(0.413f, 0.413f, 0.4f, -50, -35, 0, 5, 100);
+    silinder(0.413f, 0.413f, 0.4f, 20, -60, 0, 5, 100);
+
+    //Gedung kanan dalam 
+    kubus(0.4, 0.4, 0.4, 90, 25.1, 10, 100, 100, 74.9, 0);
+
+    //Gedung kanan dalam (bawah)
+    kubus(0.4, 0.4, 0.4, 100, 0, 17, 100, 100, 25, 0);
+
+    //Gedung kanan luar
+    kubus(0.4, 0.4, 0.4, 150, 24.9, 60, 150, 100, 75.1, 0);
+
+    //Gedung kanan luar bawah
+    kubus(0.3, 0.3, 0.3, 149, 0, 40, 152.1, 100, 99.9, 0);
+
+    //gedung silinder besar
+    silinder(0.4, 0.4, 0.4, 70, -70, 50, 40, 75.1);
+
+    //gedung silinder lobby
+    silinder(0.3, 0.3, 0.3, 70, -70, 0, 20, 25);
+
+    //pilar kanan 
+    silinder(0.413f, 0.413f, 0.4f, 40, -60, 0, 5, 25);
+    silinder(0.413f, 0.413f, 0.4f, 43, -86, 0, 5, 25);
+    silinder(0.413f, 0.413f, 0.4f, 65, -100, 0, 5, 25);
+    silinder(0.413f, 0.413f, 0.4f, 95, -100, 0, 5, 25);
+    silinder(0.413f, 0.413f, 0.4f, 125, -100, 0, 5, 25);
+    silinder(0.413f, 0.413f, 0.4f, 155, -100, 0, 5, 25);
+    silinder(0.413f, 0.413f, 0.4f, 185, -100, 0, 5, 25);
+    silinder(0.413f, 0.413f, 0.4f, 215, -100, 0, 5, 25);
+
+    //tembok atas gedung kanan (panjang)
+    kubus(0.2, 0.2, 0.2, 145, 100, 75, 140, 5, 30, 0);
+
+    //tembok kecil atas(kecil)
+    kubus(0.35, 0.35, 0.35, 72, 100, 70, 15, 5, 29, -45);
+
+
+
+    //////////////////////////////////////////
+    //tembok kiri atas bagian depan
+    glColor3f(0.2, 0.2, 0.2);
+    glBegin(GL_QUADS);
+    glVertex3f(64, 100, 66);
+    glVertex3f(69, 100, 66);
+    glVertex3f(69, 130, 66);
+    glVertex3f(64, 130, 66);
+    glEnd();
+
+    //miring atas
+    glColor3f(0.2, 0.2, 0.2);
+    glBegin(GL_QUADS);
+    glVertex3f(64, 130, 66);
+    glVertex3f(69, 130, 66);
+    glVertex3f(69, 110, 0);
+    glVertex3f(64, 110, 0);
+    glEnd();
+
+    //kiri
+    glColor3f(0.2, 0.2, 0.2);
+    glBegin(GL_QUADS);
+    glVertex3f(64, 100, 66);
+    glVertex3f(64, 130, 66);
+    glVertex3f(64, 110, 0);
+    glVertex3f(64, 100, 0);
+    glEnd();
+
+    //kanan
+    glColor3f(0.2, 0.2, 0.2);
+    glBegin(GL_QUADS);
+    glVertex3f(69, 100, 66);
+    glVertex3f(69, 130, 66);
+    glVertex3f(69, 110, 0);
+    glVertex3f(69, 100, 0);
+    glEnd();
+
+    //penutup belakang
+    glColor3f(0.2, 0.2, 0.2);
+    glBegin(GL_QUADS);
+    glVertex3f(64, 100, 0);
+    glVertex3f(69, 100, 0);
+    glVertex3f(69, 110, 0);
+    glVertex3f(64, 110, 0);
+    glEnd();
+
+    ////////////////////////////////////////////
+
+    //Bagian Kiri
+    //lantai 1 - 4
+    kubus(0.4, 0.2, 0.6, -145, 24.9, 60, 50, 140, 4.95, -15);
+    kubus(0.2, 0.2, 0.6, -138, 49.9, 35, 50, 140, 4.95, -15);
+    kubus(0.0, 0.2, 0.6, -129, 74.9, 10, 50, 140, 4.95, -15);
+    kubus(0.8, 0.2, 0.6, -120, 99.9, -15, 50, 140, 4.95, -15);
+
+    //pilar-pilar
+    silinder(0.413f, 0.413f, 0.4f, -145, -127, 0, 5, 25);
+    silinder(0.413f, 0.413f, 0.4f, -138, -100, 0, 5, 50);
+    silinder(0.413f, 0.413f, 0.4f, -120, -40, 0, 5, 100);
+
+    //Gedung
+    kubus(0.0, 1.0, 0.6, -130, 24.9, -100, 125, 350, 75, -30);
+
+    //Apartement
+    kubus(0.3, 0.3, 0.3, -230, 0, 5, 125, 250, 120, 0);
+    kubus(0.413f, 0.413f, 0.4f, -230, 24.9, 150, 125, 50, 95.1, 0);
+    kubus(0.3, 0.3, 0.3, -230, 0, 200, 125, 50, 120, 0);
+
+    //gedung mall belakang
+    kubus(0.3, 0.3, 0.3, -34, 0, -150, 518, 290, 100.1, 0);
+
+    meja_kotak(0,0,200);
+    meja_kotak(30, 0, 200);
 
     glPopMatrix();
 
@@ -237,7 +353,7 @@ void resize(int width, int height)
     if (height == 0) height = 1;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(45.0, width / height, 5.0, 400.0);
+    gluPerspective(45.0, width / height, 5.0, 2000.0);
     glTranslatef(0.0, -50.0, -250.0);
     glMatrixMode(GL_MODELVIEW);
 }
