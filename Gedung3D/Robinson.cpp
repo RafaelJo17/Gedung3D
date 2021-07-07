@@ -1,4 +1,3 @@
-  
 #include <stdlib.h>
 #include <windows.h>
 #ifdef __APPLE__
@@ -134,7 +133,7 @@ void kubus(float red, float green, float blue, float x, float y, float z, float 
     glPopMatrix();
 }
 
-void tempat_sampah(float red, float green, float blue, float x, float y, float z, float jari_jari, float tinggi) {
+void silinder_tempat_sampah(float red, float green, float blue, float x, float y, float z, float jari_jari, float tinggi) {
     //selimut
     glPushMatrix();
     glColor3f(red, green, blue);
@@ -220,7 +219,11 @@ void patung(float x, float y, float z) {
     kubus(0.396f, 0.337f, 0.243f, x, y, z, 4, 4, 9, 0);
 }
 
-
+void tempat_sampah(float x, float y, float z) {
+    silinder_tempat_sampah(0.5f, 0.5f, 0.5f, x, -z, y+2, 1, 3);
+    silinder_tempat_sampah(0.6f, 0.6f, 0.6f, x, -z, y+8, 1.5, 1.5);
+    silinder_tempat_sampah(0.4f, 0.4f, 0.4f, x, -z, y, 0.6, 2);
+}
 
 void display(void)
 {
@@ -431,7 +434,7 @@ void display(void)
     int y_meja = 0, z_meja = -150;
     int y_kursi = 0, z_kursi = -150;
     int y_kursi2 = 0, z_kursi2 = -150;
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++) {
         int x_meja = 100;
         int x_kursi = 92;
         int x_kursi2 = 108;
@@ -450,9 +453,11 @@ void display(void)
     }
 
     //Tempat sampah (depan)
-    tempat_sampah(0.4f, 0.4f, 0.4f, 13, -60, 60, 1, 4);
-    tempat_sampah(0.4f, 0.4f, 0.4f, 13, -60, 110, 1, 4);
-    tempat_sampah(0.4f, 0.4f, 0.4f, 13, -60, 160, 1, 4);
+    tempat_sampah(13, 60, 60);
+    tempat_sampah(13, 110, 60);
+    tempat_sampah(13, 160, 60);
+    //tempat sampah (dalam)
+    tempat_sampah(60, 0, -210);
 
     //mobil pameran
     mobil(0, 0, 1, 50, 5, -400);
