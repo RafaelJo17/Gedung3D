@@ -544,9 +544,9 @@ void display(void)
     glTexCoord2f(5.0, 0.0);
     glVertex3f(-167.5, 0, 225.1);
     glTexCoord2f(5.0, 5.0);
-    glVertex3f(-167.5, 120, 225.1);
+    glVertex3f(-167.5, 100, 225.1);
     glTexCoord2f(0.0, 5.0);
-    glVertex3f(-293.0, 120, 225.1);
+    glVertex3f(-293.0, 100, 225.1);
     glEnd();
 
     //tembok kiri
@@ -554,12 +554,51 @@ void display(void)
     glBegin(GL_QUADS);
     glTexCoord2f(0.0, 0.0);
     glVertex3f(-293.1, 0, 130);
-    glTexCoord2f(4.0, 0.0);
+    glTexCoord2f(5.0, 0.0);
     glVertex3f(-293.1, 0, -295);
-    glTexCoord2f(4.0, 4.0);
+    glTexCoord2f(5.0, 5.0);
     glVertex3f(-293.1, 100, -295);
-    glTexCoord2f(0.0, 4.0);
+    glTexCoord2f(0.0, 5.0);
     glVertex3f(-293.1, 100, 130);
+    glEnd();
+
+    //tembok kecil
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0);
+    glVertex3f(-293.1, 0, 225);
+    glTexCoord2f(5.0, 0.0);
+    glVertex3f(-293.1, 0, 175);
+    glTexCoord2f(5.0, 5.0);
+    glVertex3f(-293.1, 100, 175);
+    glTexCoord2f(0.0, 5.0);
+    glVertex3f(-293.1, 100, 225);
+    glEnd();
+
+    //tembok kecil tengah
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0);
+    glVertex3f(-293.1, 25, 175);
+    glTexCoord2f(3.3, 0.0);
+    glVertex3f(-293.1, 25, 130);
+    glTexCoord2f(3.3, 3.3);
+    glVertex3f(-293.1, 100, 130);
+    glTexCoord2f(0.0, 3.3);
+    glVertex3f(-293.1, 100, 175);
+    glEnd();
+
+    //tembok kecil
+    glColor3f(1.0, 1.0, 1.0);
+    glBegin(GL_QUADS);
+    glTexCoord2f(0.0, 0.0);
+    glVertex3f(-167.4, 0, 225);
+    glTexCoord2f(5.0, 0.0);
+    glVertex3f(-167.4, 0, 175);
+    glTexCoord2f(5.0, 5.0);
+    glVertex3f(-167.4, 100, 175);
+    glTexCoord2f(0.0, 5.0);
+    glVertex3f(-167.4, 100, 225);
     glEnd();
 
 
