@@ -6,6 +6,7 @@
 #include <GL/glut.h>
 #endif
 #include <math.h>
+
 using namespace std;
 GLUquadricObj* p = gluNewQuadric();
 float xrot = 0;
@@ -24,6 +25,7 @@ void silinder(float red, float green, float blue, float x, float y, float z, flo
 void kubus(float red, float green, float blue, float x, float y, float z, float panjang, float lebar, float tinggi, float rotation_z);
 
 int is_depth;
+
 void mouseMove(int x, int y) {
     if (mousedown) {
         yrot = x - xdiff;
@@ -82,6 +84,33 @@ void silinder(float red, float green, float blue, float x, float y, float z, flo
 
 }
 
+void silinder_ban(float red, float green, float blue, float x, float y, float z, float jari_jari, float tinggi) {
+    //selimut
+    glPushMatrix();
+    glColor3f(red, green, blue);
+    glRotatef(0, 1.f, 0.f, 0.f);
+    glTranslatef(x, y, z / 2.0f);
+    gluCylinder(p, jari_jari, jari_jari, tinggi, 360, 1);
+    glPopMatrix();
+
+    //bawah
+    glPushMatrix();
+    glColor3f(0.8, 0.8, 0.8);
+    glRotatef(0, 1.f, 0.f, 0.f);
+    glTranslatef(x, y, z / 2.0f);
+    gluDisk(p, 0, jari_jari, 360, 1);
+    glPopMatrix();
+
+    //atas
+    glPushMatrix();
+    glColor3f(0.8, 0.8, 0.8);
+    glRotatef(0, 1.f, 0.f, 0.f);
+    glTranslatef(x, y, z / 2.0f + tinggi);
+    gluDisk(p, 0, jari_jari, 360, 1);
+    glPopMatrix();
+
+}
+
 void kubus(float red, float green, float blue, float x, float y, float z, float panjang, float lebar, float tinggi, float rotation_z) {
     glPushMatrix();
     glColor3f(red, green, blue);
@@ -92,12 +121,20 @@ void kubus(float red, float green, float blue, float x, float y, float z, float 
     glPopMatrix();
 }
 
+void mobil(float red, float green, float blue, float x, float y, float z) {
+    silinder_ban(0, 0, 0, x, y, z, 3, 5);
+    silinder_ban(0, 0, 0, x, y, z+25, 3, 5);
+    silinder_ban(0, 0, 0, x-20, y, z, 3, 5);
+    silinder_ban(0, 0, 0, x-20, y, z+25, 3, 5);
+    kubus(red, green, blue, x-10, y, (z/2)+9, 35, 12, 5, 0);
+    kubus(red, green, blue, x-10, y, (z/2)+9, 20, 12, 10, 0);
+}
+
 void meja_kotak(float x, float y, float z) {
     silinder(0.813f, 0.694f, 0.494f, x, -z, y+(4*2), 5, 0.2);
     kubus(0.813f, 0.694f, 0.494f, x, y, z, 1, 1, 4, 0);
     silinder(0.813f, 0.694f, 0.494f, x, -z, y, 3, 0.2);
 }
-
 
 void display(void)
 {
@@ -258,6 +295,9 @@ void display(void)
 
     meja_kotak(0, 0, 80);
     meja_kotak(30, 0, 100);
+
+    mobil(0, 0, 1, 0, 0, 200);
+    mobil(0, 1, 0, -100, 0, 200);
 
     glPopMatrix();
 
