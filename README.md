@@ -1,7 +1,7 @@
 # TR_GRAFKOM_B_672019031
 
 Bahasa Indonesia :  
-Ini adalah Tugas Rancang.  
+Ini adalah Tugas Rancang kelompok kami.  
 Berikut adalah bentuk gedung mall Robinson Place Manilla dengan menggunakan bahasa C++ dan OpenGL.  
 fungsi yang digunakan:  
 glutSolidCube  
@@ -17,7 +17,7 @@ Kelompok :
 
 ----
 English :  
-This is my assignment.
+This is our team assignment.  
 This project will make Robinson Place Manilla Mall using C++ and OpenGL.  
   
 Functions that being use are :  
