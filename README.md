@@ -1,7 +1,7 @@
 # TR_GRAFKOM_B_672019031
 
 Bahasa Indonesia :  
-Ini adalah Tugas Rancang Matakuliah Grafika Komputer.  
+Ini adalah Tugas Rancang.  
 Berikut adalah bentuk gedung mall Robinson Place Manilla dengan menggunakan bahasa C++ dan OpenGL.  
 fungsi yang digunakan:  
 glutSolidCube  
@@ -10,9 +10,14 @@ gluDisk
 glVertex  
 dan lainnya  
 
+Kelompok :
+Me [dece441](https://github.com/dece441)  
+[RafaelJo17](https://github.com/RafaelJo17)  
+[hermonjul](https://github.com/hermonjul)  
+
 ----
 English :  
-This is my assignment on Computer Graphics class in my university.  
+This is my assignment.
 This project will make Robinson Place Manilla Mall using C++ and OpenGL.  
   
 Functions that being use are :  
@@ -21,3 +26,8 @@ gluCylinder
 gluDisk  
 glVertex  
 and so forth  
+
+My Teams :
+Me [dece441](https://github.com/dece441)  
+[RafaelJo17](https://github.com/RafaelJo17)  
+[hermonjul](https://github.com/hermonjul)  
