@@ -8,6 +8,11 @@
 #include <math.h>
 #include "loadImageBMP.h"
 
+// Daftar Kelompok :
+// 1. Daniel Christian  - (672019031)
+// 2. Rafael Jonathan - (672019090) 
+// 3. Hermon Julkifly Sebah - (672019280)
+
 using namespace std;
 
 GLuint _textureID;
