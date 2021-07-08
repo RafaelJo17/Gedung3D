@@ -10,8 +10,8 @@ gluDisk
 glVertex  
 dan lainnya  
 
-Kelompok :
-Me [dece441](https://github.com/dece441)  
+Kelompok :  
+[Myself : dece441](https://github.com/dece441)  
 [RafaelJo17](https://github.com/RafaelJo17)  
 [hermonjul](https://github.com/hermonjul)  
 
@@ -27,7 +27,7 @@ gluDisk
 glVertex  
 and so forth  
 
-My Teams :
-Me [dece441](https://github.com/dece441)  
+My Teams :  
+[Myself : dece441](https://github.com/dece441)  
 [RafaelJo17](https://github.com/RafaelJo17)  
 [hermonjul](https://github.com/hermonjul)  
